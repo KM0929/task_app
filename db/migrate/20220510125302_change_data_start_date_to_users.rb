@@ -1,0 +1,5 @@
+class ChangeDataStartDateToUsers < ActiveRecord::Migration[6.1]
+  def change
+    change_column :users, :start_date, :date
+  end
+end

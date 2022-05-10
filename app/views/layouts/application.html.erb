@@ -11,6 +11,24 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1>Ruby on Rails スケジュール管理アプリ</h1>
+    </header>
+
+    <div class="main_container">
+      <%= yield %>
+    </div>
+
+      <footer>
+        <% if controller.action_name == "index" %>
+          <h1>
+             現在の日時：<%= Date.today.to_s(:date_jp) %> スケジュール合計: <%= @count %>
+          </h1>
+        <% else %>
+          <h1>
+             現在の日時：<%= Date.today.to_s(:date_jp) %>
+          </h1>
+        <% end %>
+      </footer>
   </body>
 </html>
